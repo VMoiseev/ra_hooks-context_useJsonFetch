@@ -1,23 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Component from "./components/component";
+
+const PORT = 7070;
+const successUrl = `http://localhost:${PORT}/data`;
+const errorUrl = `http://localhost:${PORT}/error`;
+const loadingUrl = `http://localhost:${PORT}/loading`;
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Component url={successUrl} title="Успех" />
+      <Component url={errorUrl} title="Ошибка" />
+      <Component url={loadingUrl} title="Загрузка" />
     </div>
   );
 }
